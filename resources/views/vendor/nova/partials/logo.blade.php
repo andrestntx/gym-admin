@@ -1,1 +1,1 @@
-<img src="/images/body_blank.png" alt="Gimnasio Body People" style="height: 80%; margin:auto;">
+<img src="{{URL::asset('/images/body_blank.png')}}" alt="Gimnasio Body People" style="height: 80%; margin:auto;">
