@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Balance;
 use App\Client;
 use App\Membership;
 use App\MembershipDetail;
+use App\Observers\BalanceObserver;
 use App\Observers\ClientObserver;
 use App\Observers\MembershipDetailObserver;
 use App\Observers\MembershipObserver;
@@ -31,6 +33,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Client::observe(ClientObserver::class);
         Membership::observe(MembershipObserver::class);
         MembershipDetail::observe(MembershipDetailObserver::class);
+        Balance::observe(BalanceObserver::class);
         //});
     }
 

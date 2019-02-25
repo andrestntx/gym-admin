@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
 class Client extends Resource
@@ -96,6 +97,11 @@ class Client extends Resource
 
             Text::make(__('Nombre'), 'name')
                 ->creationRules('required', 'string'),
+
+            Select::make(__('Género'), 'sex')->options([
+                '0' => 'Femenino',
+                '1' => 'Masculino'
+            ])->hideFromIndex(),
 
             Text::make(__('Teléfono'), 'phone'),
 
