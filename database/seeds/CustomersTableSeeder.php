@@ -13,7 +13,7 @@ class CustomersTableSeeder extends Seeder
     public function run()
     {
         $customersCsv = Storage::disk('local')->get('customers.csv');
-        $customersArray = explode("\r\n", $customersCsv);
+        $customersArray = explode("\n", $customersCsv);
 
         foreach ($customersArray as $customer) {
             $columns = explode(",", $customer);
